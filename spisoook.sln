@@ -1,0 +1,40 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Spiski228
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> n = new List<int>() { 1, 2, 3, 4 };
+            n.Insert(0, 228); // вставляю на первое место в списке число 228
+            n.Add(1337); // добавление элемента
+            n.AddRange(new int[] { 7, 8, 9 });
+            n.RemoveAt(1); //  удаляю второй элемент
+            foreach (int i in n)
+            {
+                Console.WriteLine(i);
+            }
+            List<Heroes> people = new List<Heroes>(3);
+            people.Add(new Heroes() { Name = "Билли Джин" });
+            people.Add(new Heroes() { Name = "Spiderman" });
+            people.Add(new Heroes() { Name = "Тайсон" });
+            // people.Capacity = 3;
+            Console.WriteLine(people.Capacity);
+            foreach (Heroes p in people)
+            {
+                Console.WriteLine(p.Name);
+            }
+            Console.ReadLine();
+        }
+    }
+    class Heroes
+    {
+        public string Name { get; set; }
+    }
+}
